@@ -1,0 +1,43 @@
+/*
+* ==================== ALL CSS VARIABLES ================
+*/
+
+$primaryColor: #ffcc00;
+$fontColor: #353535;
+$lightYellow: #fff7d5;
+$gradient: linear-gradient(95.13deg, #ffcc00 -21.46%, #fff5cb 112.13%);
+$gradientCard: linear-gradient(158.91deg, #ffcc00 3.12%, #ffe476 94.59%);
+$lightRed: #f17676;
+$lightLime: #52ab70;
+$lightGray: #575757;
+$primaryFont: "Poppins", sans-serif;
+$headingFont: "PT Sans", sans-serif;
+
+/*
+* =========================== COMMON CSS HERE =================
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+p,
+ul,
+ol,
+nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: $primaryFont;
+}

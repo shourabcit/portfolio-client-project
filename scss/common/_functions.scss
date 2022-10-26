@@ -1,0 +1,48 @@
+/*
+* COMMON BUTTON
+*/
+@mixin button($style: normal, $padding: 20px 18px, $radius: 20px) {
+  padding: $padding;
+  display: inline-block;
+  font-family: $primaryFont;
+  font-weight: 600;
+  font-size: 20px;
+  text-decoration: none;
+  border-radius: $radius;
+  border: 1px solid transparent;
+  transition: 0.25s ease;
+  @if $style == ghost {
+    border-color: #353535;
+    color: #353535;
+    background-color: transparent;
+    svg {
+      path {
+        stroke: $fontColor;
+      }
+    }
+    &:hover {
+      color: white;
+      background-color: $primaryColor;
+      border-color: transparent;
+      svg,
+      path {
+        stroke: white;
+      }
+    }
+  } @else {
+    color: white;
+    background-color: $primaryColor;
+    &:hover {
+      color: white;
+      background-color: darken($color: $primaryColor, $amount: 5%);
+    }
+    svg,
+    span {
+      margin-left: 11px;
+      path {
+        stroke: white;
+      }
+      // color: white;
+    }
+  }
+}
