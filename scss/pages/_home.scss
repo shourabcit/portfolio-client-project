@@ -1,16 +1,36 @@
-// *BANNER STARTS HERE
+// *HERO STARTS HERE
 #hero {
+  position: relative;
   $height: 800px;
 
-  min-height: $height;
-  & .container > .row {
-    height: $height;
+  @media (max-width: 989px) {
+    padding: 30px 0;
+    padding-bottom: 50px;
   }
+  @media (min-width: 990px) and (max-width: 1399px) {
+    min-height: 650px;
+    & .container > .row {
+      height: 650px;
+    }
+  }
+  @media (min-width: 1400px) {
+    min-height: 800px;
+    & .container > .row {
+      height: 800px;
+    }
+  }
+
   .heroContent {
     color: $fontColor;
+    @media (max-width: 600px) {
+      padding: 15px;
+    }
     h3 {
       font-weight: 400;
       font-size: 24px;
+      @media (max-width: 420px) {
+        font-size: 20px;
+      }
     }
     h1 {
       margin: 15px 0;
@@ -18,26 +38,63 @@
       font-weight: 700;
       font-size: 64px;
       line-height: 83px;
+      @media (max-width: 600px) {
+        line-height: 45px;
+        font-size: 2rem;
+        margin: 5px 0;
+      }
     }
-    p {
+    & > p {
       font-weight: 400;
       font-size: 20px;
       line-height: 180%;
       margin-top: 21px;
-      margin-bottom: 81px;
+      margin-bottom: 50px;
+      text-align: justify;
+
+      @media (max-width: 600px) {
+        margin-bottom: 25px;
+      }
+      @media (min-width: 1400px) {
+        margin-bottom: 81px;
+      }
+      @media (max-width: 420px) {
+        font-size: 16px;
+      }
     }
     // BUTTON GRP
     .btn_grp {
+      margin-bottom: 50px;
+      @media (max-width: 420px) {
+        margin-bottom: 20px;
+      }
       a {
         @include button(normal, 20px 30px);
+
         &:last-child {
           @include button(ghost);
           margin-left: 11px;
+        }
+        @media (max-width: 600px) {
+          padding: 15px 20px !important;
+          border-radius: 10px !important;
+          font-size: 16px !important;
+        }
+        @media (max-width: 400px) {
+          display: block !important;
+          text-align: center;
+          margin: 5px 0 !important;
         }
       }
     }
     // SOCIAL LINKS
     .social_links {
+      p {
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 180%;
+        color: $fontColor;
+      }
       ul li {
         display: inline-block;
         a {
@@ -50,6 +107,13 @@
           color: #000;
           border-radius: 50%;
           margin: 0 8px;
+          font-size: 20px;
+          font-weight: bold;
+          transition: 0.25s ease;
+          &:hover {
+            color: #f4f3f3;
+            background-color: #000;
+          }
         }
       }
     }
@@ -63,7 +127,102 @@
       min-width: 200px;
       display: block;
       margin: auto;
+      @media (max-width: 600px) {
+        max-width: 380px;
+      }
+    }
+  }
+
+  .overlayImage {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: slideUpDown 1s ease-in alternate infinite;
+  }
+}
+
+@keyframes slideUpDown {
+  from {
+    bottom: 70px;
+    opacity: 0.5;
+  }
+  to {
+    bottom: 50px;
+    opacity: 1;
+  }
+}
+// *HERO ENDS HERE
+
+// *ABOUT US STARTS
+#about {
+  position: relative;
+  background-image: $gradient;
+  padding: 78px 0 0;
+  overflow: hidden;
+
+  .about_img {
+    img {
+      width: 100%;
+      max-width: 550px;
+      @media (max-width: 991px) {
+        transform: scalex(-100%);
+      }
+    }
+  }
+  .about_cnt {
+    color: $fontColor;
+    h2 {
+      font-family: $headingFont;
+      font-weight: 700;
+      font-size: 50px;
+      line-height: 65px;
+      @media (max-width: 600px) {
+        font-size: 40px;
+      }
+    }
+    p {
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 190%;
+      margin: 26px 0 45px;
+      text-align: justify;
+      @media (max-width: 600px) {
+        font-size: 16px;
+        margin: 15px 0 35px;
+      }
+    }
+    a {
+      @include button(ghost, 17px 44px);
+      &:hover {
+        background-color: transparent;
+        color: $fontColor;
+        border-color: $fontColor;
+        transform: scale(1.1);
+      }
+      @media (max-width: 600px) {
+        font-size: 16px;
+        padding: 10px 25px;
+        border-radius: 10px;
+      }
+    }
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -100px;
+    right: 100px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-image: linear-gradient(180deg, #52AB70 0%, rgba(82, 171, 112, 0.48) 100%);;
+    display: none;
+    @media (min-width: 1100px) {
+      display: block;
     }
   }
 }
-// *BANNER ENDS HERE
+// *ABOUT US ENDS
